@@ -1,0 +1,12 @@
+{
+  "name": "ir-iban",
+  "version": "1.0.0",
+  "description": "Turn BBAN into IBAN, validate IBAN for iran banks",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test"
+  },
+  "keywords": ["IBAN","Validator", "IR", "Bank","BBAN", "Shomareh Shaba", "Shomareh hesab"],
+  "author": "SC0d3r",
+  "license": "MIT"
+}

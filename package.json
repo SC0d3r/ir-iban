@@ -6,7 +6,26 @@
   "scripts": {
     "test": "node ./test"
   },
-  "keywords": ["IBAN","Validator", "IR", "Bank","BBAN", "Shomareh Shaba", "Shomareh hesab"],
+  "keywords": [
+    "IBAN",
+    "Validator",
+    "IR",
+    "Bank",
+    "BBAN",
+    "Shomareh Shaba",
+    "Shomareh hesab"
+  ],
   "author": "SC0d3r",
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SC0d3r/ir-iban.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SC0d3r/ir-iban/issues"
+  },
+  "homepage": "https://github.com/SC0d3r/ir-iban#readme"
 }

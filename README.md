@@ -33,7 +33,7 @@ import { isIbanValid, turnBbanIntoIban, BANK_CODES } from "ir-iban"
 example
 ```js
   const iban = "IR870570028180010653892101"
-  console.log("function isIbanValid:", "[input] iban", iban, "[result]", isIbanValid(iban))
+  const isValid = isIbanValid(iban)
 ```
 
 #### turnBbanIntoIban
@@ -56,8 +56,7 @@ countryCode = "IR" -- `optional`
 example
 ```js
 const bban = "4695069893"
-const calculatedIban = turnBbanIntoIban(bban, BANK_CODES.TEJARAT)
-console.log("funciton turnBbanIntoIban:", "[input] bban", bban, "[input] bankCode BANK_CODES.TEJARAT", "[result] iban", calculatedIban)
+const iban = turnBbanIntoIban(bban, BANK_CODES.TEJARAT)
 ```
 
 #### getBankNameFromIban
@@ -67,7 +66,7 @@ console.log("funciton turnBbanIntoIban:", "[input] bban", bban, "[input] bankCod
 
 example
 ```js
-console.log("function getBankNameFromIban:", "[input] calculatedIban", calculatedIban, "[result]", getBankNameFromIban(calculatedIban))
+const farsiBankName = getBankNameFromIban(iban)
 ```
 
 #### isBankCodeValid
@@ -78,7 +77,7 @@ you can get bank codes from enum `BANK_CODES`
 example
 
 ```js
-  console.log("function isBankCodeValid", "[input] BANK_CODES.TEJARAT", "[result]", isBankCodeValid(BANK_CODES.TEJARAT))
+const isValid = isBankCodeValid(BANK_CODES.TEJARAT)
 ```
 
 <br >

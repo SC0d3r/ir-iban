@@ -1,3 +1,12 @@
+[![https://nodei.co/npm/ir-iban.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/ir-iban.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ir-iban)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+## Tools to work with IBAN, BBAN, Their validation
+
+#
+
 ### امکانات کار با شماره شبا برای بانک های ایران
 
 <br >
@@ -27,25 +36,37 @@ import { isIbanValid, turnBbanIntoIban, BANK_CODES, formatIban } from "ir-iban"
 ```
 
 #### How to use
+#
+
+Functions
+* turnBbanIntoIban
+* turnIbanIntoBban
+* isIbanValid
+* tokenizeIban
+* isBankCodeValid
+* getBankNameFromIban
+* formatIban
+
 <br >
 
-#### isIbanValid
+#### **isIbanValid**
 این تابع مشخص میکند که آیا شماره شبا معتبر است و یا خیر
 
 example
 ```js
-  const iban = "IR870570028180010653892101"
-  const isValid = isIbanValid(iban)
+const iban = "IR870570028180010653892101"
+const isValid = isIbanValid(iban)
+// output: true
 ```
 
-#### turnBbanIntoIban
+#### **turnBbanIntoIban**
 این تابع شماره حساب را به شماره شبا تبدیل میکند
 
-bban: string
+bban: `string`
 
 bankCode: string -- use enum `BANK_COES` for example `BANK_CODES.TEJARAT`
 
-bbanCode = "0" -- `optional`
+bbanType = "0" -- `optional`
 
 `0` یعنی حساب سپرده
 
@@ -55,23 +76,61 @@ countryCode = "IR" -- `optional`
 
 <br >
 
+
 example
 ```js
 const bban = "4695069893"
+// turnBbanIntoIban(bban: string, bankCode: string, bbanType?: string, countryCode?: string)
 const iban = turnBbanIntoIban(bban, BANK_CODES.TEJARAT)
 ```
 
-#### getBankNameFromIban
+#### **turnIbanIntoBban**
+شماره شبا را به شماره حساب تبدیل میکند
+
+It return undefined if iban was not valid
+
+<br >
+
+example
+```js
+const iban = "IR870570028180010653892101"
+const bban = turnIbanIntoBban(iban) // output: bban or undefined (if iban is not valid)
+```
+
+#### **tokenizeIban**
+یک آبجکت از ساختار سازنده شماره شبا در خروجی میدهد و اگر شماره شبا نا معتبر بود آبجکت خالی میدهد
+
+It returns the tokenized iban via object or returns an empty object if iban was not valid
+
+<br >
+
+exmaple
+
+```js
+const iban = "IR870570028180010653892101"
+const tokenizedIban = tokenizeIban(iban)
+// {
+//  countryCode: "IR",
+//  CD: "87",
+//  CC: "057",
+//  bbanType: "0",
+//  BBAN: "028180010653892101"
+// }
+```
+
+#### **getBankNameFromIban**
 با توجه به شماره شبا نام فارسی بانک را بر می گرداند
 
 <br >
 
 example
 ```js
+const iban = "IR870180028180010653892101"
 const farsiBankName = getBankNameFromIban(iban)
+// output: "بانک تجارت"
 ```
 
-#### isBankCodeValid
+#### **isBankCodeValid**
 این تابع مشخص میکند که آیا کد بانک معتبر است و یا خیر
 
 you can get bank codes from enum `BANK_CODES`
@@ -79,10 +138,11 @@ you can get bank codes from enum `BANK_CODES`
 example
 
 ```js
-const isValid = isBankCodeValid(BANK_CODES.TEJARAT)
+const isValid = isBankCodeValid("018") // 018 is BANK_CODES.TEJARAT
+// output: true
 ```
 
-#### formatIban
+#### **formatIban**
 شماره شبا را به فرم استاندارد در خروجی می دهد
 
 ```js
@@ -92,6 +152,8 @@ const formattedIban = formatIban(iban)
 ```
 
 <br >
+
+#
 
 MIT License
 

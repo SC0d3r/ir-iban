@@ -18,6 +18,8 @@ function turnBbanIntoIban(bban, bankCode, bbanCode = "0", countryCode = "IR") {
   // bankCode A1-A3 should be 3 digits
   // calcluate by the A1A3BankCodes in getBankNameFromIban.js file
 
+  if (!bankCode) throw new Error("you forgot to give bankCode to turnBbanIntoIban function")
+
   bban = bban + ""
   if (bban.length < 18) {
     // pad left with zeros

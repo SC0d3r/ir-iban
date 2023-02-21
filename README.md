@@ -17,13 +17,13 @@ npm i ir-iban
 
 #### How to import
 ```js
-const { isIbanValid, turnBbanIntoIban, BANK_CODES} = require('ir-iban')
+const { isIbanValid, turnBbanIntoIban, BANK_CODES, formatIban } = require('ir-iban')
 ```
 
 or
 
 ```js
-import { isIbanValid, turnBbanIntoIban, BANK_CODES } from "ir-iban"
+import { isIbanValid, turnBbanIntoIban, BANK_CODES, formatIban } from "ir-iban"
 ```
 
 #### How to use
@@ -80,6 +80,14 @@ example
 
 ```js
 const isValid = isBankCodeValid(BANK_CODES.TEJARAT)
+```
+
+#### formatIban
+شماره شبا را به فرم استاندارد در خروجی می دهد
+
+```js
+const formattedIban = formatIban(iban)
+// output: IR87 0570 0281 8001 0653 8921 01 
 ```
 
 <br >

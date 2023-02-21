@@ -1,4 +1,5 @@
 const { BANK_CODES } = require("./src/enums")
+const formatIban = require("./src/formatIban")
 const getBankNameFromIban = require("./src/getBankNameFromIban")
 const isBankCodeValid = require("./src/isBankCodeValid")
 const isIbanValid = require("./src/isIbanValid")
@@ -10,4 +11,5 @@ module.exports = {
   isBankCodeValid,
   getBankNameFromIban,
   BANK_CODES,
+  formatIban,
 }

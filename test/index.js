@@ -1,4 +1,4 @@
-const { turnBbanIntoIban, BANK_CODES, getBankNameFromIban, isBankCodeValid } = require("..")
+const { turnBbanIntoIban, BANK_CODES, getBankNameFromIban, isBankCodeValid, formatIban } = require("..")
 const isIbanValid = require("../src/isIbanValid")
 
 function test() {
@@ -14,6 +14,8 @@ function test() {
   console.log("function getBankNameFromIban:", "[input] calculatedIban", calculatedIban, "[result]", getBankNameFromIban(calculatedIban))
 
   console.log("function isBankCodeValid", "[input] BANK_CODES.TEJARAT", "[result]", isBankCodeValid(BANK_CODES.TEJARAT))
+
+  console.log("function formatIban:", formatIban(iban))
 }
 
 test()

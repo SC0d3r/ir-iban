@@ -11,22 +11,23 @@ const mod = require("../utils/mod")
  * turns bban(shomareh hesab) to iban
  * @param {string} bban shomareh hesab
  * @param {string} bankCode bank code use BANK_CODES enum 
- * @param {string}} bbanCode "0" means hesab sepordeh, "1" means hesab tashilat
+ * @param {string}} bbanType "0" means hesab sepordeh, "1" means hesab tashilat
  * @returns {boolean}
  */
-function turnBbanIntoIban(bban, bankCode, bbanCode = "0", countryCode = "IR") {
+function turnBbanIntoIban(bban, bankCode, bbanType = "0", countryCode = "IR") {
   // bankCode A1-A3 should be 3 digits
   // calcluate by the A1A3BankCodes in getBankNameFromIban.js file
 
   if (!bankCode) throw new Error("you forgot to give bankCode to turnBbanIntoIban function")
 
   bban = bban + ""
+  bban = bban.trim()
   if (bban.length < 18) {
     // pad left with zeros
     bban = "0".repeat(18 - bban.length) + bban
   }
 
-  bban = bbanCode + bban
+  bban = bbanType + bban
 
   // now we have to calculate the CD
 

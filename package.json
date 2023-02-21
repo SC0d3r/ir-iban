@@ -1,6 +1,6 @@
 {
   "name": "ir-iban",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Turn BBAN into IBAN, validate IBAN for iran banks",
   "main": "index.js",
   "scripts": {

@@ -7,7 +7,7 @@ const mod = require("../utils/mod")
 // or just google "shomareh shaba taqsim bar 97"
 
 function isIbanValid(iban) {
-  iban = iban.toString().toUpperCase()
+  iban = iban.toString().toUpperCase().trim()
 
   if (iban.length === 0) {
     console.warn("iban.length is 0")

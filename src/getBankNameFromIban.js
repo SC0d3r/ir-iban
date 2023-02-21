@@ -2,6 +2,7 @@ const { A1A3BankCodes } = require("./enums");
 
 function getBankNameFromIban(iban = "") {
   // remove IR from it if exists
+  iban = iban.trim()
   iban = iban.startsWith("IR") ? iban.slice(2) : iban
 
   const ibanRegex = /^\d{2}(\d{3})\d{19}$/;

@@ -86,6 +86,7 @@ const isValid = isBankCodeValid(BANK_CODES.TEJARAT)
 شماره شبا را به فرم استاندارد در خروجی می دهد
 
 ```js
+const iban = "IR870570028180010653892101"
 const formattedIban = formatIban(iban)
 // output: IR87 0570 0281 8001 0653 8921 01 
 ```

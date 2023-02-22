@@ -1,6 +1,7 @@
 [![https://nodei.co/npm/ir-iban.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/ir-iban.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ir-iban)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://badge.fury.io/js/ir-iban.svg)](https://badge.fury.io/js/ir-iban)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/arhs/iban.js/master/LICENSE)
 
 
 ## Tools to work with IBAN, BBAN, Their validation
